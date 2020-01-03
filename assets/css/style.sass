@@ -1,0 +1,185 @@
+$Black: #1F2D3D
+$Brand: #409EFF
+$Success: #67C23A
+$Warning: #E6A23C
+$Danger: #F56C6C
+$DarkWhite: #F9FAFC
+$Gray: #D3DCE6
+$Silver: #8492A6
+$LightGray: #E5E9F2
+$LightSilver: #99A9BF
+$ExtraLightGray: #EFF2F7
+$ExtraLightBlack: #475669
+$ExtraLightSilver: #C0CCDA
+$MenuBgDarkColor: #324157
+$MenuBgLightColor: #EEF1F6
+
+$MenuWidth: 240px
+$MenuLiteWidth: 70px
+$SubMenuWidth: 365px
+
+@import './_display.scss'
+@import './_spacing.scss'
+@import './_flex.scss'
+@import '../../node_modules/quill/dist/quill.core.css'
+@import '../../node_modules/quill/dist/quill.bubble.css'
+@import '../../node_modules/quill/dist/quill.snow.css'
+
+html
+  height: 100%
+  width: 100%
+  overflow: hidden
+body
+  margin: 0px
+  min-height: 100vh
+  min-width: 1200px
+  overflow-x: hidden
+*:focus
+  outline: none
+
+.note-app-menu
+  background-color: $MenuBgDarkColor
+  position: relative
+  color: $DarkWhite
+  flex: 0 0 $MenuWidth
+  height: 100vh
+  transition: flex 0.1s ease-in-out
+  .menu-header
+    padding: 20px
+    cursor: default
+    .avatar
+      width: 28px
+      height: 28px
+      text-align: center
+      line-height: 27px
+      border-radius: 50%
+      background-color: $Silver
+  ul.menu-body
+    li.menu-item
+      height: 40px
+      line-height: 40px
+      svg
+        width: 28px !important
+        text-align: center
+    li.menu-item.is-active
+      background-color: $ExtraLightBlack
+      font-weight: bold
+      color: $DarkWhite
+    li.menu-item:hover:not(.is-active)
+      background-color: rgba($ExtraLightBlack, 0.3)
+    li:hover:not(.menu-item)
+      cursor: default
+      background-color: transparent
+  .collapseMenu
+    cursor: pointer
+    position: absolute
+    color: rgba($DarkWhite, 0.5)
+    background-color: $ExtraLightBlack
+    border-radius: 4px
+    padding: 5px 8px
+    bottom: 30px
+    right: 0px
+    transition: transform 0.1s ease-in-out
+    &:hover
+      color: rgba($DarkWhite, 0.8)
+      transform: scale(1.1) translateX(-2px)
+.note-app-menu.menu-lite
+  flex: 0 0 $MenuLiteWidth
+  .menu-header
+    padding: 20px 13px
+.note-app-sub-menu
+  height: 100vh
+  flex: 0 0 $SubMenuWidth
+  background-color: $MenuBgLightColor
+  border-right: 1px solid $Gray
+  .sub-menu-header
+    border-bottom: 1px solid $Gray
+    .title
+      padding: 15px 25px 30px
+      font-size: 20px
+      font-weight: bold
+      color: $Black
+    .summary
+      font-size: 15px
+      color: $Silver
+      padding: 5px 25px
+  .sub-menu-sort
+    cursor: pointer
+    .el-dropdown-menu
+      width: 255px
+    .el-dropdown-menu__item.is-active
+      color: $Success
+  .sub-menu-content
+    height: calc(100vh - 105px)
+    overflow-y: scroll
+    li.summary-note
+      height: 120px
+      line-height: initial
+      padding: 15px 25px
+      border-bottom: 1px solid $Gray
+      white-space: normal
+      .summary-title
+        font-size: 16px
+        font-weight: bold
+        margin-bottom: 5px
+      .summary-content
+        overflow: hidden
+        height: 40px
+        color: $Black
+        margin-bottom: 5px
+      .summary-date
+        font-size: 12px
+        color: $Silver
+      &.is-active, &:hover
+        background-color: rgba($Gray, 0.5)
+        color: $Black
+.note-app-editor
+  margin: 0px 20px
+  // flex: 0 0 300px
+  flex: auto
+  .btn-group svg
+    padding: 0px 15px
+    cursor: pointer
+  .btn-group ul.el-dropdown-menu
+    width: 115px
+  .btn-group svg.fa-ellipsis-v
+    color: $ExtraLightBlack
+  .btn-group svg.fa-star
+    color: $Warning
+  #editor-title input
+    width: 100%
+    border: none
+    display: block
+    padding: 15px 15px 10px
+    font-size: 28px
+    font-weight: bold
+  .ql-toolbar.ql-snow, #editor
+    border: none
+  #editor .ql-editor.ql-blank::before,
+  #editor-title input::placeholder
+    color: $LightSilver
+    stroke: $LightSilver
+  #editor
+    height: calc(100vh - 98px)
+.note-app-share
+  min-height: 100vh
+  border-top:  5px solid $Success
+  padding-top: 30px
+  .date-time
+    font-size: 11px
+    color: $LightSilver
+    margin-bottom: 3px
+  .title
+    font-size: 28px
+    font-weight: bold
+    margin-bottom: 30px
+  .container
+    margin: 0px auto
+    max-width: 750px
+  ul
+    margin: 0px
+
+
+
+
+
