@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf public_html && parcel -p 3000 index.html  --out-dir public_html",
-    "dev": "parcel -p 3000 index.html --out-dir public_html",
-    "heroku-postbuild": "parcel build index.html --out-dir public_html"
+    "build": "rm -rf dist && parcel -p 3000 index.html",
+    "dev": "parcel -p 3000 index.html "
   },
   "author": "",
   "license": "ISC",
