@@ -1,1 +1,1 @@
-web: npm run dev
+web: parcel index.html
